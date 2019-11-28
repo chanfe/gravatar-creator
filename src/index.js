@@ -1,9 +1,18 @@
 function handleSubmit(e) {
+  e.preventDefault()
+  const input = e.target.querySelector("input").value
+  updateDOM(input)
+  e.target.reset()
 
 }
-function getRandomInt(max) {
-  return Math.floor(Math.random() * Math.floor(max));
-}
+// function getRandomInt(max) {
+//   return Math.floor(Math.random() * Math.floor(max));
+// }
+
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("identicon-form")
+  form.addEventListener("submit", handleSubmit)
+})
 
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("identicon-form")
